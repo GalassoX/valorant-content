@@ -1,7 +1,7 @@
 aside {
     background-color: rgb(30, 30, 30);
     color: rgb(230, 230, 230);
-    min-height: 100vh;
+    height: 100%;
 }
 
 nav>ul {
