@@ -2,7 +2,6 @@ aside {
     background-color: rgb(30, 30, 30);
     color: rgb(230, 230, 230);
     min-height: 100vh;
-    /* width: 100px; */
 }
 
 nav>ul {
@@ -24,4 +23,12 @@ nav>ul {
 
 .img-item {
     width: 2em;
+}
+
+.home-item {
+    padding: 2em;
+}
+
+.img-home {
+    width: 147px;
 }
