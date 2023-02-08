@@ -1,0 +1,12 @@
+<h2 class="title">Agents</h2>
+<div class="agent-list">
+    <a *ngFor="let agent of agents; index as i; first as isFirst" [routerLink]="['/agents', agent.displayName.toLowerCase()]">
+        <div class="agent-list-item" 
+            [ngStyle]="{'background': getBackgroundColor(agent)}"
+            (mouseenter)="playAgentVoice(agent)"
+        >
+            <img src={{agent.displayIcon}} alt="">
+            <p>{{agent.displayName}}</p>
+        </div>
+    </a>
+</div>

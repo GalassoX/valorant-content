@@ -7,13 +7,15 @@ import { AngularSvgIconPreloaderModule } from 'angular-svg-icon-preloader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { AgentsComponent } from './agents/agents.component';
+import { AgentsComponent } from './components/agents/agents.component';
+import { AgentInfoComponent } from './components/agents/agent-info/agent-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    AgentsComponent
+    AgentsComponent,
+    AgentInfoComponent
   ],
   imports: [
     BrowserModule,

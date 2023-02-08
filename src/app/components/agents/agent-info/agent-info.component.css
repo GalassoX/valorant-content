@@ -1,0 +1,61 @@
+.agent-info-main {
+    min-height: 100vh;
+}
+
+.agent-info {
+    display: flex;
+}
+
+.agent-images {
+    max-height: min-content;
+}
+
+.agent-img {
+    width: 500px;
+    height: 454px;
+    background-size: 500px 454px;
+    background-repeat: no-repeat;
+}
+
+.agent-info-desc-title {
+    display: flex;
+    gap: 1em;
+}
+
+.agent-info-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+}
+
+.agent-role-img {
+    height: 38px;
+}
+
+.btn-play-voice {
+    border: 0;
+    padding: 1em;
+    width: max-content;
+    border-radius: 15px;
+    color: rgb(230, 230, 230);
+    cursor: pointer;
+}
+
+.agent-abilities {
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(4, 225px);
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.agent-abilitie-item {
+    width: 225px;
+    text-align: center;
+}
+
+.agent-abilitie-item>img {
+    width: 100px;
+}
