@@ -1,5 +1,9 @@
 main {
-    min-height: 100vh;
+    min-height: 100%;
     background-color: rgb(50, 50, 50);
     display: flex;
+}
+
+.content {
+    width: 100%;
 }
