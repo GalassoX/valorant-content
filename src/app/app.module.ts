@@ -6,7 +6,7 @@ import { AngularSvgIconPreloaderModule } from 'angular-svg-icon-preloader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 import { AgentsComponent } from './agents/agents.component';
 
 @NgModule({
