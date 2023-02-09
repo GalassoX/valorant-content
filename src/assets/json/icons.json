@@ -11,6 +11,14 @@
         {
             "iconName": "weapon",
             "iconPath": "/assets/images/svgs/weapon.svg"
+        },
+        {
+            "iconName": "play",
+            "iconPath": "/assets/images/svgs/play.svg"
+        },
+        {
+            "iconName": "search",
+            "iconPath": "/assets/images/svgs/search.svg"
         }
     ],
     "customIcons": [

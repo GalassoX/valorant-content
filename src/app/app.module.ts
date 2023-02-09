@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { AgentsComponent } from './components/agents/agents.component';
 import { AgentInfoComponent } from './components/agents/agent-info/agent-info.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     AgentsComponent,
-    AgentInfoComponent
+    AgentInfoComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

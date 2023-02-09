@@ -10,6 +10,7 @@ import { AgentsService } from '../../service/agents.service';
 export class AgentsComponent implements OnInit {
   agents: IAgent[] = [];
   error: string = '';
+  agentsFiltered: IAgent[] = [];
 
   audioAgentVoice: HTMLAudioElement = new Audio();
   constructor(private agentService: AgentsService) { }
@@ -20,6 +21,7 @@ export class AgentsComponent implements OnInit {
       if (data.status === 200) {
         this.error = '';
         this.agents = data.body.data;
+        this.agentsFiltered = data.body.data;
       } else {
         this.error = data.body.error || 'A internal server error was ocurred, try later';
       }
@@ -36,5 +38,17 @@ export class AgentsComponent implements OnInit {
     const audioSrc = agent.voiceLine.mediaList[0].wave;
     this.audioAgentVoice = new Audio(audioSrc);
     this.audioAgentVoice.play().catch(() => this.audioAgentVoice.muted = true);
+  }
+
+  filterAgents(event: any) {
+    const filter: string = event.target.value;
+    this.agentsFiltered = this.agents.filter(agent =>
+      agent
+        .displayName
+        .toLowerCase()
+        .includes(
+          filter.toLowerCase()
+        )
+    );
   }
 }

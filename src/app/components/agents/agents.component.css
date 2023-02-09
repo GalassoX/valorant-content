@@ -1,14 +1,37 @@
+.agent-list-main {
+    min-height: 100vh;
+}
+
+.agent-list-title {
+    display: flex;
+    margin: 2em;
+    justify-content: space-between;
+}
+
 .title {
     text-align: center;
+}
+
+.search-agent {
+    display: flex;
+}
+
+.input-search-agent {
+    border-radius: 5px;
+    outline: none;
+    border: 0;
+    padding-inline: .5em;
+    font-size: medium;
+    background-color: rgb(30, 30, 30);
+    color: rgb(230, 230, 230);
 }
 
 .agent-list {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(4, 150px);
+    grid-template-columns: repeat(5, 150px);
     width: 100%;
     gap: 2em;
-    min-height: 100vh;
     margin-top: 2em;
     margin-bottom: 2em;
 }
@@ -16,7 +39,7 @@
 .agent-list-item {
     display: flex;
     flex-direction: column;
-    border-radius: 15px;
+    border-radius: 5px;
     align-items: center;
     width: 150px;
     text-align: center;
@@ -24,6 +47,7 @@
     padding: 1em;
     transition: scale 100ms;
     gap: .5em;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .5);
 }
 
 .agent-list-item:hover {
@@ -32,7 +56,8 @@
 
 .agent-list-item>img {
     width: 100px;
-    border-radius: 15px;
+    border-radius: 50%;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, .25);
 }
 
 .agent-list-item>p {
@@ -41,7 +66,7 @@
 
 @media only screen and (max-width: 1024px) {
     .agent-list {
-        grid-template-columns: repeat(3, 150px);
+        grid-template-columns: repeat(4, 150px);
     }
 }
 

@@ -1,27 +1,35 @@
-<div *ngIf="agent" class="agent-info-main">
-    <div class="agent-info">
-        <div class="agent-images">
-            <img src={{agent.fullPortrait}} alt="Agent" class="agent-img" [ngStyle]="{'background-image': 'url(' + agent.background + ')' }">
-            <!-- <img src={{agent.background}} alt="Agent" class="agent-img"> -->
-        </div>
-        <div class="agent-info-description">
-            <div class="agent-info-desc-title">
-                <h1>{{agent.displayName}}</h1>
-                <img src={{agent.role.displayIcon}} alt={{agent.role.displayName}} class="agent-role-img">
+<div class="agent-info-main">
+    <loader *ngIf="!agent" text="Cargando..."></loader>
+    <div *ngIf="agent" class="agent-content">
+        <div class="agent-info">
+            <div class="agent-images">
+                <img src={{agent.fullPortrait}} alt="Agent" class="agent-img" [ngStyle]="{'background-image': 'url(' + agent.background + ')', 'background-color': '#'+ agent.backgroundGradientColors[1] }">
             </div>
-            <p>Agent {{agent.description}}</p>
-            <div>
-                <p>{{agent.displayName}} role</p>
-                <p>{{agent.role.displayName}} - {{agent.role.description}}</p>
+            <div class="agent-info-description" [ngStyle]="{'background-color': '#' + agent.backgroundGradientColors[1] }">
+                <div class="agent-info-desc-title">
+                    <h1>{{agent.displayName}}</h1>
+                    <img src={{agent.role.displayIcon}} alt={{agent.role.displayName}} class="agent-role-img">
+                </div>
+                <p>Agent {{agent.description}}</p>
+                <div>
+                    <p>{{agent.displayName}} role</p>
+                    <p>{{agent.role.displayName}} - {{agent.role.description}}</p>
+                </div>
+                <button (click)="playVoice()" class="btn-play-voice" [ngStyle]="{ 'background-color': '#'+ agent.backgroundGradientColors[3]}">
+                    <svg-icon name="play" class="btn-play-voice-icon"></svg-icon>
+                    Play Voice
+                </button>
             </div>
-            <button (click)="playVoice()" class="btn-play-voice" [ngStyle]="{ 'background-color': '#'+ agent.backgroundGradientColors[0]}">Play Voice</button>
         </div>
-    </div>
-    <div class="agent-abilities">
-        <div class="agent-abilitie-item" *ngFor="let abilitie of agent.abilities">
-            <h3>{{abilitie.displayName}}</h3>
-            <img src={{abilitie.displayIcon}} alt={{abilitie.slot}} *ngIf="abilitie.displayIcon">
-            <p>{{abilitie.description}}</p>
+        <div class="agent-abilities">
+            <h1>Agent abilities</h1>
+            <div class="agent-abilities-grid">
+                <div class="agent-abilitie-item" *ngFor="let abilitie of agent.abilities" [ngStyle]="{'background-color': '#' + agent.backgroundGradientColors[1] }">
+                    <h3>{{abilitie.displayName}} ({{abilitie.slot}})</h3>
+                    <img src={{abilitie.displayIcon}} alt={{abilitie.slot}} *ngIf="abilitie.displayIcon">
+                    <p>{{abilitie.description}}</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>

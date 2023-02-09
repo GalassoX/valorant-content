@@ -1,5 +1,14 @@
 .agent-info-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-height: 100vh;
+}
+
+.agent-content {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, .5));
 }
 
 .agent-info {
@@ -15,6 +24,8 @@
     height: 454px;
     background-size: 500px 454px;
     background-repeat: no-repeat;
+    border-radius: 5px;
+    margin: 2em;
 }
 
 .agent-info-desc-title {
@@ -24,9 +35,14 @@
 
 .agent-info-description {
     display: flex;
+    width: fit-content;
+    max-width: 50%;
     flex-direction: column;
     justify-content: center;
     gap: 2em;
+    background-color: rgb(70, 70, 70);
+    border-radius: 5px;
+    padding: 2em;
 }
 
 .agent-role-img {
@@ -34,28 +50,61 @@
 }
 
 .btn-play-voice {
+    display: flex;
+    gap: 1em;
+    align-items: center;
     border: 0;
     padding: 1em;
     width: max-content;
-    border-radius: 15px;
+    border-radius: 5px;
     color: rgb(230, 230, 230);
     cursor: pointer;
+    transition: scale 100ms;
+}
+
+.btn-play-voice:hover {
+    scale: 1.1;
+}
+
+.btn-play-voice-icon {
+    display: block;
+    width: 15px;
 }
 
 .agent-abilities {
     margin-top: 2em;
+}
+
+.agent-abilities>h1 {
+    text-align: center;
+}
+
+.agent-abilities-grid {
+    margin-top: 2em;
     display: grid;
-    grid-template-columns: repeat(4, 225px);
+    grid-template-columns: repeat(4, 250px);
     justify-content: center;
-    align-items: center;
     gap: 1em;
 }
 
 .agent-abilitie-item {
-    width: 225px;
+    width: 250px;
     text-align: center;
+    background-color: rgb(70, 70, 70);
+    border-radius: 5px;
+    padding: 2em;
 }
 
 .agent-abilitie-item>img {
     width: 100px;
+    padding: 1em;
+}
+
+.agent-abilitie-item>h3 {
+    padding: 1em;
+}
+
+.agent-abilitie-item>p {
+    font-size: small;
+    padding: 1em;
 }

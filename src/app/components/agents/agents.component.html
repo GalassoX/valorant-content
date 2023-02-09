@@ -1,12 +1,19 @@
-<h2 class="title">Agents</h2>
-<div class="agent-list">
-    <a *ngFor="let agent of agents; index as i; first as isFirst" [routerLink]="['/agents', agent.displayName.toLowerCase()]">
-        <div class="agent-list-item" 
-            [ngStyle]="{'background': getBackgroundColor(agent)}"
-            (mouseenter)="playAgentVoice(agent)"
-        >
-            <img src={{agent.displayIcon}} alt="">
-            <p>{{agent.displayName}}</p>
+<div class="agent-list-main">
+    <div class="agent-list-title">
+        <h1 class="title">Agents</h1>
+        <div class="search-agent">
+            <input type="text" placeholder="Filter by name" class="input-search-agent" (keyup)="filterAgents($event)">
         </div>
-    </a>
+    </div>
+    <div class="agent-list">
+        <a *ngFor="let agent of agentsFiltered; index as i; first as isFirst" [routerLink]="['/agents', agent.displayName.toLowerCase()]">
+            <div class="agent-list-item" 
+                [ngStyle]="{'background': getBackgroundColor(agent)}"
+                (mouseenter)="playAgentVoice(agent)"
+            >
+                <img src={{agent.displayIcon}} alt="">
+                <p>{{agent.displayName}}</p>
+            </div>
+        </a>
+    </div>
 </div>
